@@ -14,8 +14,15 @@ import org.springframework.security.web.SecurityFilterChain;
 
 import com.testTask.Test.service.UserDetailsServiceImpl;
 
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
+import io.swagger.v3.oas.annotations.security.SecurityScheme;
+
 @Configuration
 @EnableWebSecurity
+@SecurityScheme(
+  type = SecuritySchemeType.HTTP,
+  name = "basicAuth",
+  scheme = "basic")
 public class SecurityConfig {
 
     @Autowired
@@ -27,10 +34,11 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(authorize -> authorize
                 .requestMatchers("/api/v1/register", "http://localhost:8080/api/v1/auth/register", "api/v1/register", "/register").permitAll()
-                
-                .anyRequest().authenticated()
+                .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+                .requestMatchers("/api/**").authenticated()
+                .anyRequest().permitAll()
             )
-            .httpBasic(httpBasic -> {}); // Используем новый подход;
+            .httpBasic(httpBasic -> {});
 
         return http.build();
     }
