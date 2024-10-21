@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  # MongoDB контейнер
+  mongo:
+    image: mongo:latest
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=task  # Инициализация базы данных
+
+  # Spring Boot приложение
+  app:
+    build: .
+    container_name: spring-boot-app
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/task  # Строка подключения к MongoDB
+    depends_on:
+      - mongo
+
+# Для сохранения данных MongoDB на хосте
+volumes:
+  mongo_data:

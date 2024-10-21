@@ -35,7 +35,7 @@ public class UsersService {
                 userRepository.save(user);
             }
         } catch(Exception e) {
-            return CompletableFuture.completedFuture(e.getMessage()); 
+            return CompletableFuture.completedFuture("Error: " + e.getMessage()); 
         }
         
 
