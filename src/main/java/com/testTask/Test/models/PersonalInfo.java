@@ -6,7 +6,9 @@ public class PersonalInfo {
     private String firstname;
     private String lastname;
     private String email;
-
+    private String dateofbirth;
+    private String gender;
+    
     @XmlElement(name = "firstname")
     public String getFirstname() {
         return firstname;
@@ -32,5 +34,23 @@ public class PersonalInfo {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @XmlElement(name = "dateofbirth")
+    public String getDateofbirth() {
+        return dateofbirth;
+    }
+
+    public void setDateofbirth(String dateofbirth) {
+        this.dateofbirth = dateofbirth;
+    }
+
+    @XmlElement(name = "gender")
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

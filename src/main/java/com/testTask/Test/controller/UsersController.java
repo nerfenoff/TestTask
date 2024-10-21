@@ -47,6 +47,10 @@ public class UsersController {
     public CompletableFuture<ResponseEntity<String>> uploadXml(@RequestBody String xmlString) {
         return userService.parseXml(xmlString).thenApply(ResponseEntity::ok);
     }
+    @PostMapping("/largeXml")
+    public CompletableFuture<ResponseEntity<String>> uploadLargeXml(@RequestBody String xmlString) {
+        return userService.parseLargeXml(xmlString).thenApply(ResponseEntity::ok);
+    }
 
     @PutMapping("/{id}")
     public CompletableFuture<ResponseEntity<String>> updateUser(@PathVariable String id, @RequestBody String entity) {

@@ -83,6 +83,8 @@ public class UsersServiceTest {
         personalInfo.setFirstname("FirstName");
         personalInfo.setLastname("LastName");
         personalInfo.setEmail("test@test.com");
+        personalInfo.setDateofbirth("1990-01-01");
+        personalInfo.setGender("Male");
 
         contactInfo.setPhonenumber("+3754411111111");
         address.setCity("city");
@@ -145,6 +147,8 @@ public class UsersServiceTest {
         personalInfo.setFirstname("FirstName");
         personalInfo.setLastname("LastName");
         personalInfo.setEmail("test@test.com");
+        personalInfo.setDateofbirth("1990-01-01");
+        personalInfo.setGender("Male");
 
         contactInfo.setPhonenumber("+3754411111111");
         address.setCity("city");
@@ -213,6 +217,8 @@ public class UsersServiceTest {
         personalInfo.setFirstname("FirstName");
         personalInfo.setLastname("LastName");
         personalInfo.setEmail("test@test.com");
+        personalInfo.setDateofbirth("1990-01-01");
+        personalInfo.setGender("Male");
 
         contactInfo.setPhonenumber("+3754411111111");
         address.setCity("city");

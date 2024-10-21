@@ -96,6 +96,12 @@
 			<version>5.0.0</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- StAX for Streaming XML parsing -->
+		<dependency>
+			<groupId>org.codehaus.woodstox</groupId>
+			<artifactId>woodstox-core-asl</artifactId>
+			<version>4.4.1</version>
+		</dependency>
 
 	</dependencies>
 
