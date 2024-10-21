@@ -13,7 +13,6 @@ import java.util.List;
 @Document(collection = "users")
 public class User {
     @Id
-    @XmlAttribute
     private String id;
 
     private PersonalInfo personalInfo;
@@ -21,6 +20,15 @@ public class User {
     private Employment employment;
     private Education education;
     private List<String> skills;
+
+    @XmlAttribute
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     @XmlElement(name = "personalinfo")
     public PersonalInfo getPersonalInfo() {
